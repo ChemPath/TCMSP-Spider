@@ -18,7 +18,7 @@ import lxml.html
 class TcmspSpider:
     def __init__(self):
 
-        self.root_url = "https://www.tcmsp-e.com/tcmspsearch.php"
+        self.root_url = url = "https://old.tcmsp-e.com/tcmspsearch.php"
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; NCE-AL10 Build/HUAWEINCE-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
