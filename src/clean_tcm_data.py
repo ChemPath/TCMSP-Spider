@@ -3,7 +3,7 @@ import os
 
 # Define input and output directories
 input_dir = r'C:\Users\Dr. Contessa Petrini\ChemPath\TCMSP-Spider\data\spider_data'
-output_dir = r'C:\Users\Dr. Contessa Petrini\ChemPath\TCMSP-Spider\data\cleaned_data'
+output_dir = r'C:\Users\Dr. Contessa Petrini\ChemPath\src\data\cleaned_data'
 
 def clean_data(file_name):
     # Load data
@@ -15,18 +15,24 @@ def clean_data(file_name):
     
     try:
         df = pd.read_excel(file_path)
+        print(f'Read {file_name} successfully.')
     except Exception as e:
         print(f'Error reading {file_name}: {e}')
         return
 
-    # Basic cleaning steps (modify as needed)
+    # Basic cleaning steps
     df.dropna(inplace=True)  # Remove rows with missing values
     df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Strip whitespace from string columns
     df.columns = [col.strip().lower() for col in df.columns]  # Normalize column names
 
     # Save the cleaned data
     output_path = os.path.join(output_dir, file_name)
-    df.to_excel(output_path, index=False)
+    try:
+        df.to_excel(output_path, index=False)
+        print(f'Cleaned file saved to: {output_path}')
+    except Exception as e:
+        print(f'Error saving {file_name}: {e}')
+
 
 def main():
     # Create the output directory if it does not exist

@@ -27,7 +27,7 @@ class TcmspSpider:
 
         # self.file_path = "./data/"
 
-        self.spider_file_path = "./data/spider_data/"
+        self.spider_file_path = "C:\\Users\\Dr. Contessa Petrini\\ChemPath\\TCMSP-Spider\\data\\spider_data\\"
         self.sample_file_path = "./data/sample_data/"
         self.create_folder(self.spider_file_path)
         self.create_folder(self.sample_file_path)
